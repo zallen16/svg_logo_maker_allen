@@ -32,6 +32,6 @@ const questions = [
     {
         type: "input",
         name: "shape-color",
-        message: 
+        message: "Please enter a color keyword (OR a hexadecimal number) for the shape.",
     }
 ];
