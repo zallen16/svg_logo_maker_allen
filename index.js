@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const generateLogo = require("./generateLogo.js");
+const generateLogo = require("./generateLogo.js");
 
 // class Svg{
 //     constructor(){
@@ -20,26 +20,25 @@ const questions = [
     },
     {
         type: "input",
-        name: "text-color",
+        name: "text_color",
         message: "Please enter a color keyword (OR a hexadecimal number) for the text.",
     },
     {
         type: "list",
         name: "image",
         message: "Which shape would you like?",
-        choices: ["Cirlce", "Square", "Triangle"],
+        choices: ["Circle", "Square", "Triangle"],
     },
     {
         type: "input",
-        name: "shape-color",
+        name: "shape_color",
         message: "Please enter a color keyword (OR a hexadecimal number) for the shape.",
     }
 ];
 
 function writeToFile(fileName, data) {
     var answers = generateLogo(data);
-    fs.writeFile(fileName, answers) [
-        console.log("Generated logo.svg")];
+    fs.writeFile(fileName, answers, (err) => err ? console.log(err) : console.log("Generated logo.svg"));
 }
 
 function init() {
